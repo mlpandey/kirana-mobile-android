@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="com.zhola.common.utils.ClickHandler" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileCIV"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/circle_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cameraCIV"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:onClick="@{(View) -> clickHandler.handleClick(View)}"
+                android:src="@drawable/ic_camera"
+                app:civ_circle_background_color="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="@+id/profileCIV"
+                app:layout_constraintEnd_toEndOf="@+id/profileCIV" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/deliveryAddressTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Delivery Address"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profileCIV" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addressOneCV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_1sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/deliveryAddressTV">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/addressOneTIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="Address Line 1"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_13sdp"
+                    android:textColorHint="@color/dark_gray"
+                    app:hintTextColor="@color/colorAccent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/addressOneET"
+                        style="@style/editextNormalStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addressTwoCV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_1sdp"
+                app:layout_constraintEnd_toEndOf="@+id/addressOneCV"
+                app:layout_constraintStart_toStartOf="@+id/addressOneCV"
+                app:layout_constraintTop_toBottomOf="@+id/addressOneCV">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/addressTwoTIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="Address Line 2"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_13sdp"
+                    android:textColorHint="@color/dark_gray"
+                    app:hintTextColor="@color/colorAccent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/addressTwoET"
+                        style="@style/editextNormalStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cityCV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_1sdp"
+                app:layout_constraintEnd_toEndOf="@+id/addressOneCV"
+                app:layout_constraintStart_toStartOf="@+id/addressOneCV"
+                app:layout_constraintTop_toBottomOf="@+id/addressTwoCV">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/cityTIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="City"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_13sdp"
+                    android:textColorHint="@color/dark_gray"
+                    app:hintTextColor="@color/colorAccent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/cityET"
+                        style="@style/editextNormalStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/stateCV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_1sdp"
+                app:layout_constraintEnd_toEndOf="@+id/addressOneCV"
+                app:layout_constraintStart_toStartOf="@+id/addressOneCV"
+                app:layout_constraintTop_toBottomOf="@+id/cityCV">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/stateTIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="State/Provice"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_13sdp"
+                    android:textColorHint="@color/dark_gray"
+                    app:hintTextColor="@color/colorAccent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/stateET"
+                        style="@style/editextNormalStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/zipCodeCV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_1sdp"
+                app:layout_constraintEnd_toEndOf="@+id/addressOneCV"
+                app:layout_constraintStart_toStartOf="@+id/addressOneCV"
+                app:layout_constraintTop_toBottomOf="@+id/stateCV">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/zipCodeTIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="Zip Code"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_13sdp"
+                    android:textColorHint="@color/dark_gray"
+                    app:hintTextColor="@color/colorAccent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/zipCodeET"
+                        style="@style/editextNormalStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/countryCV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:onClick="@{(View) -> clickHandler.handleClick(View)}"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_1sdp"
+                app:layout_constraintEnd_toEndOf="@+id/addressOneCV"
+                app:layout_constraintStart_toStartOf="@+id/addressOneCV"
+                app:layout_constraintTop_toBottomOf="@+id/zipCodeCV">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/countryTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:drawableEnd="@drawable/ic_drop_down"
+                    android:fontFamily="@font/inter_regular"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_14sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_14sdp"
+                    android:text="Country"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="gone" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/countryTIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="Country"
+                    android:onClick="@{(View) -> clickHandler.handleClick(View)}"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_13sdp"
+                    android:textColorHint="@color/dark_gray"
+                    app:hintTextColor="@color/colorAccent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/countryET"
+                        style="@style/editextNormalStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:drawableEnd="@drawable/ic_drop_down"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapSentences"
+                        android:onClick="@{(View) -> clickHandler.handleClick(View)}"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/customerBT"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/button_bg"
+                android:fontFamily="@font/inter_regular"
+                android:onClick="@{(View) -> clickHandler.handleClick(View)}"
+                android:padding="@dimen/_12sdp"
+                android:text="Save Address"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/addressOneCV"
+                app:layout_constraintStart_toStartOf="@+id/addressOneCV"
+                app:layout_constraintTop_toBottomOf="@+id/countryCV"
+                app:layout_constraintVertical_bias="0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

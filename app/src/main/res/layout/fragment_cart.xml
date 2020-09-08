@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray">
+
+        <!--        <androidx.core.widget.NestedScrollView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:background="@color/gray"-->
+        <!--            app:layout_constraintBottom_toTopOf="@id/mRLCheckout"-->
+        <!--            app:layout_constraintTop_toTopOf="parent">-->
+
+        <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent">-->
+
+        <!--                <com.mlsdev.animatedrv.AnimatedRecyclerView-->
+        <!--                    android:id="@+id/cartRV"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_marginTop="@dimen/dimens_1x"-->
+        <!--                    android:orientation="vertical"-->
+        <!--                    app:animationDuration="800"-->
+        <!--                    app:layoutAnimation="@anim/layout_animation_from_scale"-->
+        <!--                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+        <!--                    app:layoutManagerOrientation="vertical"-->
+        <!--                    app:layoutManagerReverse="false"-->
+        <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--                <androidx.cardview.widget.CardView-->
+        <!--                    android:id="@+id/promoCV"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="0dp"-->
+        <!--                    android:layout_marginStart="10dp"-->
+        <!--                    android:layout_marginTop="@dimen/dimens_0_5x"-->
+        <!--                    android:layout_marginEnd="25dp"-->
+        <!--                    android:layout_marginBottom="@dimen/dimens_0_5x"-->
+        <!--                    app:cardBackgroundColor="@color/white"-->
+        <!--                    app:cardCornerRadius="5dp"-->
+        <!--                    app:layout_constraintBottom_toBottomOf="@+id/goIV"-->
+        <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                    app:layout_constraintStart_toStartOf="parent"-->
+        <!--                    app:layout_constraintTop_toTopOf="@+id/goIV">-->
+
+        <!--                    <androidx.appcompat.widget.AppCompatEditText-->
+        <!--                        android:layout_width="match_parent"-->
+        <!--                        android:layout_height="wrap_content"-->
+        <!--                        android:layout_gravity="center"-->
+        <!--                        android:background="@color/transparent"-->
+        <!--                        android:gravity="start"-->
+        <!--                        android:hint="Enter your promo code"-->
+        <!--                        android:paddingStart="10dp"-->
+        <!--                        android:singleLine="true"-->
+        <!--                        android:textColor="@color/black"-->
+        <!--                        android:textColorHint="@color/screen_bg"-->
+        <!--                        android:textSize="16sp" />-->
+
+        <!--                </androidx.cardview.widget.CardView>-->
+
+        <!--                <androidx.appcompat.widget.AppCompatImageView-->
+        <!--                    android:id="@+id/goIV"-->
+        <!--                    android:layout_width="@dimen/dimens_5x"-->
+        <!--                    android:layout_height="@dimen/dimens_5x"-->
+        <!--                    android:layout_marginTop="10dp"-->
+        <!--                    android:layout_marginEnd="10dp"-->
+        <!--                    android:layout_marginBottom="@dimen/dimens_1x"-->
+        <!--                    android:clickable="true"-->
+        <!--                    android:elevation="5dp"-->
+        <!--                    android:focusable="true"-->
+        <!--                    android:foreground="?attr/selectableItemBackground"-->
+        <!--                    android:src="@drawable/ic_go"-->
+        <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                    app:layout_constraintTop_toBottomOf="@+id/cartRV" />-->
+        <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <!--        </androidx.core.widget.NestedScrollView>-->
+
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--            android:id="@+id/mRLCheckout"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:background="@color/white"-->
+        <!--            android:paddingStart="30dp"-->
+        <!--            android:paddingTop="@dimen/dimens_1x"-->
+        <!--            android:paddingEnd="@dimen/dimens_1x"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent">-->
+
+        <!--            <androidx.appcompat.widget.AppCompatTextView-->
+        <!--                android:id="@+id/totalAmountTV"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="@dimen/dimens_1x"-->
+        <!--                android:text="Total amount:"-->
+        <!--                android:textColor="@color/gray"-->
+        <!--                android:textSize="15sp"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--            <androidx.appcompat.widget.AppCompatTextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginEnd="10dp"-->
+        <!--                android:text="$124.00"-->
+        <!--                android:textColor="@color/black"-->
+        <!--                android:textSize="16sp"-->
+        <!--                app:layout_constraintBottom_toBottomOf="@+id/totalAmountTV"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="@+id/totalAmountTV" />-->
+
+        <!--            <androidx.appcompat.widget.AppCompatButton-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="10dp"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:layout_marginEnd="10dp"-->
+        <!--                android:layout_marginBottom="@dimen/dimens_2x"-->
+        <!--                android:background="@drawable/yellow_rounded_bg"-->
+        <!--                android:text="Check Out"-->
+        <!--                android:textAllCaps="true"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="14sp"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/totalAmountTV" />-->
+
+        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="com.zhola.common.utils.ClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_image">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_transparent_bg" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_subtract"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/titleTV" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginBT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/button_white_bg"
+            android:padding="@dimen/_12sdp"
+            android:fontFamily="@font/inter_regular"
+            android:onClick="@{(View) -> clickHandler.handleClick(View)}"
+            android:text="Login"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/createAccountBT"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/button_bg"
+            android:padding="@dimen/_12sdp"
+            android:fontFamily="@font/inter_regular"
+            android:onClick="@{(View) -> clickHandler.handleClick(View)}"
+            android:text="Create Account"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toTopOf="@+id/loginBT"
+            app:layout_constraintEnd_toEndOf="@+id/loginBT"
+            app:layout_constraintStart_toStartOf="@+id/loginBT" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/descTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet ,consececuter ,adepsi valiet"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toTopOf="@+id/createAccountBT"
+            app:layout_constraintEnd_toEndOf="@+id/loginBT"
+            app:layout_constraintStart_toStartOf="@+id/loginBT" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:fontFamily="@font/inter_regular"
+            android:paddingTop="@dimen/_40sdp"
+            android:text="Tap a button,\nget your groceries"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintBottom_toTopOf="@+id/descTV"
+            app:layout_constraintEnd_toEndOf="@+id/loginBT"
+            app:layout_constraintStart_toStartOf="@+id/loginBT" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_splash_logo" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_logo" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

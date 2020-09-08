@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/shopMI"
+        android:enabled="true"
+        android:icon="@drawable/shop_checked"
+        android:title="Shop" />
+
+    <item
+        android:id="@+id/saveMI"
+        android:enabled="true"
+        android:icon="@drawable/save_checked"
+        android:title="Saved" />
+
+    <item
+        android:id="@+id/ordersMI"
+        android:enabled="true"
+        android:icon="@drawable/profile_checked"
+        android:title="My Orders" />
+
+</menu>

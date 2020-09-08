@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_5sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderIdTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Order# 17304"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderDateTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/inter_regular"
+                android:text="21-07-2020"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintStart_toStartOf="@+id/orderIdTV"
+                app:layout_constraintTop_toBottomOf="@+id/orderIdTV" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/itemTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Total 3 Items"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/orderDateTV" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/quantityTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/inter_regular"
+                android:text="1 Piece"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/_10sdp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itemTV" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalAmountTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Total Amount:   "
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/quantityTV" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:text="$20.00"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/totalAmountTV"
+                app:layout_constraintStart_toEndOf="@+id/totalAmountTV"
+                app:layout_constraintTop_toTopOf="@+id/totalAmountTV" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/storeNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Grocery Store"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/totalTV" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/storeAddressTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Both No 9,59 Square,Lorem"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toStartOf="@+id/statusTV"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/storeNameTV" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/statusTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Delivered"
+                android:textColor="@color/order_color"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/tickIV"
+                app:layout_constraintEnd_toStartOf="@+id/tickIV"
+                app:layout_constraintTop_toTopOf="@+id/tickIV" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/tickIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_oval"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_tick"
+                app:layout_constraintBottom_toBottomOf="@+id/storeAddressTV"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

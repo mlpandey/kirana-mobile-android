@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="com.zhola.common.utils.ClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/myItemsTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/orange_selected_tab"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center"
+            android:onClick="@{(View) -> clickHandler.handleClick(View)}"
+            android:padding="@dimen/_10sdp"
+            android:text="My Items"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toStartOf="@+id/suggestionsTV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/suggestionsTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center"
+            android:onClick="@{(View) -> clickHandler.handleClick(View)}"
+            android:padding="@dimen/_10sdp"
+            android:text="Suggestions"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/myItemsTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/myItemsTV"
+            app:layout_constraintTop_toTopOf="@+id/myItemsTV" />
+
+        <FrameLayout
+            android:id="@+id/tab_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myItemsTV" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

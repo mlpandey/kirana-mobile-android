@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ordersMI"
+        android:enabled="true"
+        android:icon="@drawable/shop_checked"
+        android:title="Orders" />
+
+    <item
+        android:id="@+id/inventoryMI"
+        android:enabled="true"
+        android:icon="@drawable/inventory_checked"
+        android:title="Inventory" />
+
+</menu>

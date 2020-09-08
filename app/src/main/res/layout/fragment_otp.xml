@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="com.zhola.common.utils.ClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/backIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:onClick="@{(View) -> clickHandler.handleClick(View)}"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/verificationTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Verification"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backIV" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mobileTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Please enter the 4-digit code sent to you at \n+1-202-555-0165"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/verificationTV"
+            app:layout_constraintTop_toBottomOf="@+id/verificationTV" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/timeTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/inter_regular"
+            android:text="00:05"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="@+id/mobileTV"
+            app:layout_constraintTop_toBottomOf="@+id/mobileTV" />
+
+        <com.chaos.view.PinView
+            android:id="@+id/otpPV"
+            style="@style/PinWidget.PinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:cursorVisible="true"
+            android:inputType="number"
+            android:itemBackground="@drawable/button_white_bg"
+            android:textColor="@color/black"
+            app:cursorColor="@color/black"
+            app:cursorWidth="@dimen/_2sdp"
+            app:itemHeight="@dimen/_50sdp"
+            app:itemSpacing="@dimen/_15sdp"
+            app:itemWidth="@dimen/_50sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timeTV"
+            app:lineColor="@color/black_transparent"
+            app:viewType="rectangle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/resendTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center"
+            android:text="If you don't receive the code in 30 seconds\n tap below to resend it"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintEnd_toEndOf="@+id/mobileTV"
+            app:layout_constraintStart_toStartOf="@+id/mobileTV"
+            app:layout_constraintTop_toBottomOf="@+id/otpPV" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/verifyBT"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/gray_button_bg"
+            android:enabled="false"
+            android:fontFamily="@font/inter_regular"
+            android:onClick="@{(View) -> clickHandler.handleClick(View)}"
+            android:padding="@dimen/_12sdp"
+            android:text="Verify"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="@+id/mobileTV"
+            app:layout_constraintStart_toStartOf="@+id/mobileTV"
+            app:layout_constraintTop_toBottomOf="@+id/resendTV" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/reSendTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/inter_regular"
+            android:onClick="@{(View) -> clickHandler.handleClick(View)}"
+            android:text="RESEND"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/verifyBT" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
